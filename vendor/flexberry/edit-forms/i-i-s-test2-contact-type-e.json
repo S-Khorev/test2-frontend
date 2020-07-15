@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Contact type",
+  "name": "IISTest2ContactTypeE",
+  "className": "ContactTypeE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-test2-contact-type",
+      "modelProjection": "ContactTypeE"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+﻿{
+  "name": "IISTest2Contact",
+  "modelName": "i-i-s-test2-contact",
+  "className": "Contact",
+  "nameSpace": "IIS.Test2",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "firName",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "surName",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "secName",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "contactType",
+      "relatedTo": "i-i-s-test2-contact-type",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "phone",
+      "relatedTo": "i-i-s-test2-phone",
+      "inverse": "contact"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ContactE",
+      "modelName": "i-i-s-test2-contact",
+      "attrs": [
+        {
+          "name": "firName",
+          "caption": "Fir name",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "surName",
+          "caption": "Sur name",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "secName",
+          "caption": "Sec name",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ContactType",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "typeName",
+              "caption": "Type name",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "default",
+          "caption": "Contact type",
+          "name": "contactType",
+          "relatedTo": "i-i-s-test2-contact-type",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "PhoneE",
+          "caption": "Phone",
+          "name": "phone",
+          "relatedTo": "i-i-s-test2-phone",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ContactL",
+      "modelName": "i-i-s-test2-contact",
+      "attrs": [
+        {
+          "name": "firName",
+          "caption": "Fir name",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "surName",
+          "caption": "Sur name",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "secName",
+          "caption": "Sec name",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ContactType",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "typeName",
+              "caption": "Type name",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Type name",
+          "name": "contactType",
+          "relatedTo": "i-i-s-test2-contact-type",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

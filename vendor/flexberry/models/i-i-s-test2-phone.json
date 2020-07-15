@@ -1,0 +1,77 @@
+﻿{
+  "name": "IISTest2Phone",
+  "modelName": "i-i-s-test2-phone",
+  "className": "Phone",
+  "nameSpace": "IIS.Test2",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "number",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "phoneType",
+      "relatedTo": "i-i-s-test2-phone-type",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "contact",
+      "relatedTo": "i-i-s-test2-contact",
+      "inverse": "phone"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "PhoneE",
+      "modelName": "i-i-s-test2-phone",
+      "attrs": [
+        {
+          "name": "number",
+          "caption": "Number",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "TypeName",
+          "lookupValueField": "typeName",
+          "relationName": "PhoneType",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "typeName",
+              "caption": "Type name",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Phone type",
+          "name": "phoneType",
+          "relatedTo": "i-i-s-test2-phone-type",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
